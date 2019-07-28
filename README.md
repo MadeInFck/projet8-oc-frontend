@@ -6,5 +6,5 @@ Parmi les objectifs de ce projet figure la création d'un document rassemblant:
 - la documentation technique
 - un audit de performance et comparatif avec un projet similaire
 
-Ce document a été réalisé sous la forme d'un wiki, non sur GitHub, mais via l'outil proposé par [ MediaWiki ](https://mediawiki.org) dans un but pédagogique.
-Il est accessible via le lien suivant: [ projet8.oc.madeinfck.com ](https://projet8.oc.madeinfck.com).
+Ce document a été réalisé sous la forme d'un wiki, non sur GitHub, mais via l'outil proposé par [MediaWiki](https://mediawiki.org) dans un but pédagogique.
+Il est accessible via le lien suivant: [projet8.oc.madeinfck.com](https://projet8.oc.madeinfck.com).
