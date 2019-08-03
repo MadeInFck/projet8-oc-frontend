@@ -80,7 +80,7 @@
 
 		callback = callback || function () {};
 
-		/* // Generate an ID
+		// Generate an ID
 	    var newId = ""; 
 	    var charset = "0123456789";
 
@@ -110,56 +110,8 @@
 			todos.push(updateData);
 			localStorage[this._dbName] = JSON.stringify(data);
 			callback.call(this, [updateData]);
-		} */
-		//Code modified to allow checking if todo Id has already been used to prevent any conflict
-        if (id) {
-			// If an ID was actually given, find the item and update each property
-            for (var i = 0, len = todos.length; i < len; i++) {
-                if (todos[i].id === id) {
-                    for (var key in updateData) {
-                        todos[i][key] = updateData[key];
-                    }
-                    break;
-                }
-            }
-            localStorage[this._dbName] = JSON.stringify(data);
-            callback.call(this, todos);
-        } else {
-            // If no ID was given, we generate a new ID for the new todo
-            var newId = "";
-			var charset = "0123456789";
-			
-            // Check if there is already at least one item in todos list
-            if (todos.length > 0) {
-
-                // If yes, we loop to be sure the new ID is not already used
-                var idAlreadyUsed = true;
-
-                while (idAlreadyUsed === true) {
-
-                    // We create an ID
-                    for (let i = 0; i < 6; i++) {
-                        newId += charset.charAt(Math.floor(Math.random() * charset.length));
-                    }
-
-                    // Is it already used ?
-                    for (let i = 0; i < todos.length; i++) {
-                        if (todos[i].id === newId) {
-                            // Yes
-                            idAlreadyUsed = true;
-                            break;
-                        } else {
-                            // No
-                            idAlreadyUsed = false;
-                        }
-                    }
-                }
-            } else {
-                // If there is no item, we create the ID
-                for (let i = 0; i < 6; i++) {
-                    newId += charset.charAt(Math.floor(Math.random() * charset.length));
-                }
-            }
+		}
+		
 
             // Assign an ID
             updateData.id = parseInt(newId);
