@@ -104,9 +104,9 @@ describe('controller', function () {
                 completed: true
             }];
             setUpModel(todo);
-
+			
             subject.setView('#/active');
-
+			
             expect(view.render).toHaveBeenCalledWith('showEntries', todo);
 
 		});
