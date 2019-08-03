@@ -159,8 +159,8 @@
 	 */
 	Controller.prototype.removeItem = function (id) {
 		var self = this;
-		//Console.log removed
-		/* var items;
+		
+		var items;
 		self.model.read(function(data) {
 			items = data;
 		});
@@ -169,7 +169,7 @@
 			if (item.id === id) {
 				console.log("Element with ID: " + id + " has been removed.");
 			}
-		}); */
+		});
 
 		self.model.remove(id, function () {
 			self.view.render('removeItem', id);
